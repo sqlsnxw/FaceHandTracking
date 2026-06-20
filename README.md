@@ -1,57 +1,31 @@
-# 🖐️ FaceHandTracking
+# FaceHandTracking
 
-Control your computer with your hands and track your face in real time, using a
-regular webcam. Built with [OpenCV](https://opencv.org/) and Google
-[MediaPipe](https://developers.google.com/mediapipe).
+A little computer-vision project that lets you control your mouse with your hand and
+tracks your face through the webcam. Built with OpenCV and MediaPipe.
 
-## ✨ Features
+## What it does
 
-- **Move the mouse with your palm** — hold up your open palm and the cursor follows it.
-- **Left click with a gesture** — make the ASL **"A"** sign (closed fist, thumb to the side) to click.
-- **Real-time face tracking** — detects your face and draws facial landmarks live.
+- Move the cursor by moving your open palm around
+- Make an ASL "A" sign (basically a fist) to left click
+- Detects your face and draws the landmarks on it
 
-## 📦 Requirements
+## Running it
 
-- Python 3.9+
-- A webcam
-- Python packages:
-  - `mediapipe`
-  - `opencv-python`
-  - `pynput` (used to control the mouse)
+You'll need Python and a webcam.
 
-## 🚀 Installation
-
-```bash
-git clone https://github.com/sqlsnxw/FaceHandTracking.git
-cd FaceHandTracking
+```
 pip install -r requirements.txt
-# pynput is also required for mouse control:
 pip install pynput
 ```
 
-The hand/face model files (`hand_landmarker.task`, `face_landmarker.task`) are
-included in the repo and loaded automatically at startup.
+Then run:
 
-## ▶️ Usage
-
-```bash
+```
 python "import cv2.py"
 ```
 
-A window opens showing your webcam with hand and face landmarks drawn on top.
-Use your palm to move the cursor and the ASL "A" gesture to click. Press the
-window's close button (or `Ctrl+C` in the terminal) to quit.
+A window opens with your camera feed and the tracking drawn on top. Move your palm to
+move the mouse, fist to click. Close the window to quit.
 
-## 🎮 Gesture reference
-
-| Gesture | Action |
-|---------|--------|
-| Open palm | Move the mouse cursor |
-| ASL "A" (closed fist) | Left click |
-| Face in frame | Tracked with landmarks drawn |
-
-## 📝 Notes
-
-- Good, even lighting improves tracking accuracy.
-- This is a personal/educational project — gesture detection is best-effort and
-  may need tuning of the confidence thresholds in the script.
+It works best with good lighting. This is a hobby project, so the gesture detection isn't
+perfect. If it feels off you can tweak the confidence values near the top of the script.
